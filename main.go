@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	rl := NewRateLimiter(1, 5)
+	rl := NewRateLimiter2(1, 5)
 	http.HandleFunc("/", rl.Limit(handler))
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
